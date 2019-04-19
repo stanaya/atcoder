@@ -7,6 +7,8 @@
 #include <set>
 #include <algorithm>
 using namespace std;
+int i,j,k;
+string s;
 
 int main() {
 
