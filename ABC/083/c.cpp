@@ -8,12 +8,16 @@
 #include <algorithm>
 #include <numeric>
 using namespace std;
-typedef long long LL;
-LL i,j,k,n,m;
-LL mod=1000000007;
+int i,j,k,n,m;
 string s;
 
 int main() {
-
+  long long x,y; cin >> x>> y;
+  long long div = y/x;
+  long long exp=0;
+  while ((long long)pow(2,exp) <=div) {
+    ++exp;
+  }
+  cout << exp;
   return 0;
 }

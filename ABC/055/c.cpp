@@ -8,12 +8,18 @@
 #include <algorithm>
 #include <numeric>
 using namespace std;
-typedef long long LL;
-LL i,j,k,n,m;
-LL mod=1000000007;
+long long i,j,k,n,m;
 string s;
+long long mod=1000000007;
 
 int main() {
-
+  cin >> n>>m;
+  long long out =0;
+  if (m>=2) {
+    out += min(n,m/2);
+    m -= 2 * min(n,m/2);
+    out += m/4;
+  }
+  cout << out << endl;
   return 0;
 }
