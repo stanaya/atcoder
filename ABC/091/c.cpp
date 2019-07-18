@@ -3,30 +3,32 @@ using namespace std;
 #define all(a)  (a).begin(),(a).end()
 typedef long long ll;
 ll mod=1000000007;
-string s;
 
 int main() {
-  ll n,m;cin >> n >> m;
-  ll out;
-  if(n==1){
-    if(m==1){
-      out = 1;
-    } else if(m==2){
-      out ==0;
-    } else {
-      out = m-2;
-    }
-  } else if(n==2) {
-    out =0;
-  } else {
-    if(m==1){
-      out = n-2;
-    } else if(m==2){
-      out =0;
-    } else {
-      out = (n-2)*(m-2);
+  int n; cin >> n;
+  int INF = 1000000000;
+  vector<pair<int, int>> red, blue;
+  for(int i=0; i<n;++i){
+    int x,y;cin >> x >> y;
+    red.push_back(make_pair(y,x));
+  }
+  for(int i=0; i<n;++i){
+    int x,y;cin >> x >> y;
+    blue.push_back(make_pair(x,y));
+  }
+  sort(all(blue));
+  sort(all(red),greater<pair<int, int>>());
+  int cnt=0;
+  for(int i=0;i<n;++i){
+    for(int j=0;j<n;++j){
+      if(blue[i].first > red[j].second && blue[i].second > red[j].first){
+        ++cnt;
+        red[j] = make_pair(INF, INF);
+        break;
+      }
     }
   }
-  cout << out << endl;
+
+  cout << cnt << endl;
   return 0;
 }
