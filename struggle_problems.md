@@ -27,5 +27,6 @@
 ## AGC
 - 031-a
 - 032-a
+- 036-a
 ## other
 - tenka1-c
