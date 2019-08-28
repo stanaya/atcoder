@@ -28,6 +28,8 @@
 - 008-a
 - 031-a
 - 032-a
+- 033-a
 - 036-a
 ## other
 - tenka1-c
+- tenka1BC2019-a
