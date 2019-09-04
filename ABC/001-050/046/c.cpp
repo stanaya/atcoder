@@ -1,24 +1,25 @@
-#include <iostream>
-#include <cmath>
+#include<bits/stdc++.h>
 using namespace std;
+#define all(a)  (a).begin(),(a).end()
+typedef long long ll;
+const ll mod=1000000007;
+#define repi(i,a,b) for(int i=int(a);i<int(b);++i)
 
 int main() {
 	int n; cin >> n;
-	long long vt;
-	long long va;
-	for (int i =0; i<n; ++i) {
-		int t,a; cin >> t >> a;
-		if(i == 0) {
-			vt = t;
-			va = a;
-		}
-		if (vt > va) {
-			va = max(t,a) * va /min(t,a);
-		} else  if (vt > va){
-
-		}
-
+	ll a=1;
+	ll t=1;
+	repi(i,0,n){
+		ll ttmp, atmp;
+		cin >> ttmp >> atmp;
+		ll xt = t/ttmp;
+		if(t%ttmp != 0) xt++;
+		ll xa = a/atmp;
+		if(a%atmp != 0) xa++;
+		ll x = max(xt,xa);
+		t = ttmp*x;
+		a = atmp*x;
 	}
-	// your code goes here
+	cout << t+a << endl;
 	return 0;
 }

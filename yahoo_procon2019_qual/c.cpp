@@ -8,13 +8,14 @@ const ll mod=1000000007;
 int main() {
   ll k,a,b;cin >> k>>a>>b;
   ll out0 = k+1;
-  ll
-  if(k>a+1LL&&a+2LL<b){
+  ll out = 1;
+  if(k>=a+1LL&&a+2LL<=b){
     k -= a-1LL;
-    --out;
+    out += a-1LL;
     out += (k/2LL)*(b-a);
-    out += k%2LL;
+    k -= 2LL * (k/2LL);
+    out += k;
   }
-  cout << out << endl;
+  cout << max(out,out0) << endl;
   return 0;
 }
