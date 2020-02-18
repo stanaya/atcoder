@@ -40,3 +40,4 @@
 ## other
 - tenka1-c
 - tenka1BC2019-a
+- keyence2020-c
