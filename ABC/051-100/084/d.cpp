@@ -21,15 +21,18 @@ bool isPrime(ll x){
 }
 
 int main() {
-  ll x;cin>>x;
-  if(x%2LL==0&&x!=2LL)++x;
-  while(true){
-    if(isPrime(x)){
-      break;
-    } else {
-      x+=2LL;
+  vector<ll> v(100000+1);
+  ll cnt=0;
+  for(ll i=1;i<100001;++i){
+    if(i%2==1){
+      if(isPrime(i)&&isPrime((i+1LL)/2LL))++cnt;
     }
+    v[i] = cnt;
   }
-  cout << x << endl;
+  ll q;cin>>q;
+  for(ll i=0;i<q;++i){
+    ll l,r;cin>>l>>r;
+    cout << v[r] - v[l-1] <<endl;
+  }
   return 0;
 }
